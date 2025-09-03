@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+  build:
+    commands:
+      - echo Deploying index.html to S3...
+      - aws s3 cp index.html s3://mizzou-cicd-artifacts-12345/ --acl public-read
+artifacts:
+  files:
+    - '**/*'
+
